@@ -1,0 +1,29 @@
+{
+  "name": "suman-debug",
+  "version": "0.0.101",
+  "description": "Debugging utility for Suman ecosystem (logging)",
+  "main": "index.js",
+  "scripts": {
+    "test": "suman"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sumanjs/suman-debug.git"
+  },
+  "keywords": [
+    "Debugging",
+    "logging",
+    "stream",
+    "suman"
+  ],
+  "author": "Olegzandr",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/sumanjs/suman-debug/issues"
+  },
+  "homepage": "https://github.com/sumanjs/suman-debug#readme",
+  "dependencies": {
+    "colors": "^1.1.2",
+    "moment": "^2.17.0"
+  }
+}
