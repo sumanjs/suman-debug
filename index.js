@@ -42,8 +42,18 @@ const availableColors = [
     'bgWhite'
 ];
 
-const noop = function () {
+const noop = function (list, opts) {
+
+    //TODO: we should compared global.sumanOpts with the opts passed in
+    if(Array.isArray(list)){
+        if(opts && opts.verbose){
+            console.log.apply(console, list);
+        }
+    }
+
 };
+
+
 const useColors = true;
 
 // const fns = {};
@@ -78,6 +88,7 @@ function createDebuggerFn(str, opts) {
     assert(typeof str === 'string',
         ' => suman-debug project => usage error => please pass a string identifier as first arg.');
     opts = opts || {};
+    opts.vverbose = true;
 
     const timemask = opts.timemask || opts.tm || 'HH:mm:ss:ms a';
     assert(typeof timemask === 'string', '"timemask"/"tm" property passed to suman-debug must be a string.');
@@ -87,9 +98,8 @@ function createDebuggerFn(str, opts) {
     var background = opts.bg || opts.background;
     var lfp = opts.lfp || opts.logFilePath || path.resolve(process.env.HOME + '/.suman/suman-debug.log');
 
-    if (lfp) {
-        assert(path.isAbsolute(lfp), ' => suman-debug project => log file path is not absolute => ' + lfp);
-    }
+
+    assert(path.isAbsolute(lfp), ' => suman-debug project => log file path is not absolute => ' + lfp);
 
     if (foreground) {
         assert(availableColors.indexOf(foreground) > -1, ' => Color chosen is not available => ' + foreground);
@@ -112,7 +122,16 @@ function createDebuggerFn(str, opts) {
         return noop;
     }
     else {
-        fn = function () {
+        fn = function (list, opts) {
+
+            if(Array.isArray(list)){
+                opts = opts || opts;
+            }
+            else{
+                list = Array.prototype.slice.call(arguments);
+                opts = null;
+            }
+
 
             try {
                 fs.writeFileSync(lfp,
@@ -126,18 +145,11 @@ function createDebuggerFn(str, opts) {
                 }
             }
 
-            const args = Array.prototype.slice.call(arguments);
-            const data = args.map(function (a) {
+            const data = list.map(function (a) {
 
                 const d = (typeof a === 'string' ? a : util.inspect(a));
 
-                // fs.writeFileSync(lfp, d, {flags: 'w', flag: 'w'}, function (err) {
-                //     if (err) {
-                //         console.error('\n', err.stack || err, '\n');
-                //     }
-                // });
-
-                fs.writeFileSync(lfp, d, {flags: 'a', flag: 'a'});
+                fs.writeFileSync(lfp, '\n' + d + '\n', {flags: 'a', flag: 'a'});
 
                 if (useColors) {
                     return createColoredString(d, foreground, background);
