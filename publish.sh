@@ -47,7 +47,7 @@ git commit --allow-empty -am "publish/release:$GIT_COMMIT_MSG" &&
 git push origin HEAD:staging -f &&
 
 if [ "$2" = "publish" ]; then
-   npm publish .  &&    # bump version
+   npm publish .  &&
    echo "published suman to NPM"
 fi
 
