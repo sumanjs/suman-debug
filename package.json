@@ -1,6 +1,6 @@
 {
   "name": "suman-debug",
-  "version": "0.0.102",
+  "version": "0.0.103",
   "description": "Debugging utility for Suman ecosystem (logging)",
   "main": "index.js",
   "scripts": {
