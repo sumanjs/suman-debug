@@ -42,11 +42,19 @@ const availableColors = [
     'bgWhite'
 ];
 
-const noop = function (list, opts) {
+const noop = function (list, predicate) {
+
+    const sumanOpts = (global.sumanOpts || {});
 
     //TODO: we should compared global.sumanOpts with the opts passed in
+    // if(Array.isArray(list)){
+    //     if(opts && ((opts.verbose && sumanOpts.verbose) || (opts.vverbose && sumanOpts.vverbose))){
+    //         console.log.apply(console, list);
+    //     }
+    // }
+
     if(Array.isArray(list)){
-        if(opts && opts.verbose){
+        if(predicate && predicate() || (!predicate && sumanOpts.vverbose)){
             console.log.apply(console, list);
         }
     }
