@@ -42,6 +42,10 @@ const availableColors = [
     'bgWhite'
 ];
 
+const alwaysReturnsTrue = function () {
+    return true;
+};
+
 const noop = function (list, predicate) {
 
     const sumanOpts = (global.sumanOpts || {});
@@ -53,8 +57,8 @@ const noop = function (list, predicate) {
     //     }
     // }
 
-    if(Array.isArray(list)){
-        if(predicate && predicate() || (!predicate && sumanOpts.vverbose)){
+    if (Array.isArray(list)) {
+        if (predicate && predicate() || (!predicate && sumanOpts.vverbose)) {
             console.log.apply(console, list);
         }
     }
@@ -96,7 +100,7 @@ function createDebuggerFn(str, opts) {
     assert(typeof str === 'string',
         ' => suman-debug project => usage error => please pass a string identifier as first arg.');
     opts = opts || {};
-    opts.vverbose = true;
+    // opts.vverbose = true;
 
     const timemask = opts.timemask || opts.tm || 'HH:mm:ss:ms a';
     assert(typeof timemask === 'string', '"timemask"/"tm" property passed to suman-debug must be a string.');
@@ -123,19 +127,16 @@ function createDebuggerFn(str, opts) {
 
     var fn, m;
 
-    // if(fn = fns[str]){
-    //   return fn;
-    // }
-    if (!findMatch(str)) {
+    if (!findMatch(str) || !opts.force) {
         return noop;
     }
     else {
-        fn = function (list, opts) {
+        fn = function (list, predicate) {
 
-            if(Array.isArray(list)){
-                opts = opts || opts;
+            if (Array.isArray(list)) {
+                predicate = predicate || alwaysReturnsTrue;
             }
-            else{
+            else {
                 list = Array.prototype.slice.call(arguments);
                 opts = null;
             }
