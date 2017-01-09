@@ -127,7 +127,7 @@ function createDebuggerFn(str, opts) {
 
     var fn, m;
 
-    if (!findMatch(str) || !opts.force) {
+    if (!findMatch(str) && !opts.force) {
         return noop;
     }
     else {
