@@ -11,10 +11,11 @@
     "url": "git+https://github.com/sumanjs/suman-debug.git"
   },
   "keywords": [
-    "Debugging",
+    "debugging",
     "logging",
     "stream",
-    "suman"
+    "suman",
+    "debug"
   ],
   "author": "Olegzandr",
   "license": "ISC",
@@ -23,7 +24,6 @@
   },
   "homepage": "https://github.com/sumanjs/suman-debug#readme",
   "dependencies": {
-    "colors": "^1.1.2",
-    "moment": "^2.17.1"
+    "colors": "^1.1.2"
   }
 }

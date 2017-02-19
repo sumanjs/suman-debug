@@ -8,7 +8,6 @@ const fs = require('fs');
 const path = require('path');
 
 //npm
-const moment = require('moment');
 const colors = require('colors/safe');
 
 //project
@@ -171,7 +170,7 @@ function createDebuggerFn(str, opts) {
 
 
             process.stderr.write('\n\n' + colors.blue('SUMAN_DEBUG=') + '"' + colors.blue.bold(str) + '"' + ' @'
-                + colors.cyan.bold(moment().format(timemask)) + '\n' + data + '\n\n');
+                + colors.cyan.bold(new Date()) + '\n' + data + '\n\n');
 
         };
 
