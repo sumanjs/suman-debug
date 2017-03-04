@@ -27,6 +27,6 @@
     "colors": "^1.1.2"
   },
   "devDependencies": {
-    "node-check-fast": "0.0.1002"
+    "node-check-fast": "latest"
   }
 }
