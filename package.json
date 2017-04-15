@@ -24,10 +24,10 @@
   },
   "homepage": "https://github.com/sumanjs/suman-debug#readme",
   "dependencies": {
-    "colors": "^1.1.2"
+    "colors": "^1.1.2",
+    "suman-browser-polyfills": "latest"
   },
   "devDependencies": {
-    "suman-browser-polyfills": "latest",
     "node-check-fast": "latest"
   }
 }
