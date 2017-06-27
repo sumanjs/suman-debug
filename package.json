@@ -1,10 +1,10 @@
 {
   "name": "suman-debug",
-  "version": "0.0.110",
+  "version": "0.0.111",
   "description": "Debugging utility for Suman ecosystem (logging)",
   "main": "index.js",
   "scripts": {
-    "test": "suman"
+    "test": "./@test.sh"
   },
   "repository": {
     "type": "git",
