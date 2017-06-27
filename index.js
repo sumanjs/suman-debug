@@ -1,5 +1,4 @@
-// note: this code is modeled after https://github.com/visionmedia/debug
-// but I tend not to trust *certain* code, so it is re-purposed
+'use strict';
 
 //polyfills
 const process = require('suman-browser-polyfills/modules/process');
