@@ -10,6 +10,7 @@ test
 suman.conf.js
 package-lock.json
 yarn.lock
+.editorconfig
 
 ### matching files
 *.sh
