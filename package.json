@@ -1,15 +1,26 @@
 {
-  "name": "suman-debug",
-  "version": "0.0.111",
+  "_id": "suman-debug@0.0.111",
+  "_location": "/suman-debug",
+  "_phantomChildren": {},
+  "_requiredBy": [
+    "#EXISTING"
+  ],
+  "author": {
+    "name": "Olegzandr"
+  },
+  "bugs": {
+    "url": "https://github.com/sumanjs/suman-debug/issues"
+  },
+  "dependencies": {
+    "chalk": "^2.1.0",
+    "suman-browser-polyfills": "latest"
+  },
   "description": "Debugging utility for Suman ecosystem (logging)",
-  "main": "index.js",
-  "scripts": {
-    "test": "./@test.sh"
+  "devDependencies": {
+    "node-check-fast": "latest"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/sumanjs/suman-debug.git"
-  },
+  "gitHead": "faeaa87b547e12a6176eb172557b5171fb74e7cb",
+  "homepage": "https://github.com/sumanjs/suman-debug#readme",
   "keywords": [
     "debugging",
     "logging",
@@ -17,17 +28,18 @@
     "suman",
     "debug"
   ],
-  "author": "Olegzandr",
   "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/sumanjs/suman-debug/issues"
+  "main": "index.js",
+  "name": "suman-debug",
+  "optionalDependencies": {},
+  "readme": "# Suman-Debug\n\nModeled after the popular debug package utility for Node.js, but specialized for\nthe SumanJS module ecosystem.",
+  "readmeFilename": "README.md",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sumanjs/suman-debug.git"
   },
-  "homepage": "https://github.com/sumanjs/suman-debug#readme",
-  "dependencies": {
-    "colors": "^1.1.2",
-    "suman-browser-polyfills": "latest"
+  "scripts": {
+    "test": "./@test.sh"
   },
-  "devDependencies": {
-    "node-check-fast": "latest"
-  }
+  "version": "0.0.111"
 }

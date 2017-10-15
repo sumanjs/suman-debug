@@ -11,7 +11,7 @@ const fs = require('fs');
 const path = require('path');
 
 //npm
-const colors = require('colors/safe');
+const colors = require('chalk');
 
 //project
 const debugEnv = String(process.env.SUMAN_DEBUG).split(',').map(function (item) {
