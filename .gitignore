@@ -9,4 +9,7 @@ coverage
 ### files
 package-lock.json
 yarn.lock
-
+tmp
+temp
+tmp/worktrees
+temp/worktrees
